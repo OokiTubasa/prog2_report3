@@ -10,10 +10,10 @@ boolean dead; //敵の生死状態。true=死亡。
 Created by tnal on 2016/11/13.
 */
 public class Enemy {
- public String name;
- public int hitPoint;
- public int attack;
- public boolean dead;  /**
+    private String name;
+    private int hitPoint;
+    private int attack;
+    private boolean dead;  /**
 コンストラクタ。名前、最大HP、攻撃力を指定する。
 @param name モンスター名
 @param maximumHP モンスターのHP
@@ -32,12 +32,13 @@ attackに応じて乱数でダメージを算出し、hero.wounded()によりダ
 */
 
 public void attack(Hero hero){
-    if( hitPoint > 0 ) {
+    if  ( hitPoint > 0 ) 
+    {
         dead = false;
-int damage = (int)(Math.random() * attack);
-System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage);
-hero.wounded(damage);
-}
+        int damage = (int)(Math.random() * attack);
+        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
+        hero.wounded(damage);
+    }
 }/**
 自身へ攻撃されたときのダメージ処理をするメソッド。
 指定されたダメージを hitPoint から引き、死亡判定を行う。
@@ -45,4 +46,31 @@ hero.wounded(damage);
  dead = true;
  System.out.printf("モンスター%sは倒れた。\n", name);
 } }
+public String getName(){
+    return this.name;
+}
+public void setName(String re_name){
+    this.name = re_name;
+}
+
+public int getHitPoint(){
+    return this.hitPoint;
+}
+public void setHitPoint(int re_hitpoint){
+    this.hitPoint = re_hitpoint;
+}
+
+public int getAttack(){
+    return this.attack;
+}
+public void setAtttack(int re_attack){
+    this.attack = re_attack;
+}
+
+public boolean getDead(){
+    return this.dead;
+}
+public void setDead(boolean re_dead){
+    this.dead = re_dead;
+}
 }
