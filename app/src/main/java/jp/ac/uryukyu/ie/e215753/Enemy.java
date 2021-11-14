@@ -27,6 +27,7 @@ public Enemy (String name, int maximumHP, int attack) {
  System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
 } /**
 Heroへ攻撃するメソッド。
+hitpointが０より多い時。つまり、モンスターが生き残っている場合のみ下記のコードを実行。
 attackに応じて乱数でダメージを算出し、hero.wounded()によりダメージ処理を実行。
 @param hero 攻撃対象
 */
