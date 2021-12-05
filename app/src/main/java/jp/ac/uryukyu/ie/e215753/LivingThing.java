@@ -42,7 +42,7 @@ public String getName(){
  * @param opponent 攻撃対象
 */
 public void attack(LivingThing opponent){
-    int damage = (int)(Math.random() * attack);
+    int damage = (int)(Math.random() * attack); 
     if  ( hitPoint > 0 ) 
     {
         dead = false;
